@@ -1,21 +1,25 @@
-public class test {
+public class Main {
     public static void main(String[] args) {
-        // اختبار Queue باستخدام Array
-        Queue<Integer> arrayQueue = new ArrayQueue1<>();
-        arrayQueue.enqueue(1);
-        arrayQueue.enqueue(2);
-        arrayQueue.enqueue(3);
-        System.out.println("ArrayQueue - العنصر الموجود في المقدمة: " + arrayQueue.first()); // 1
-        System.out.println("ArrayQueue - العنصر الذي تمت إزالته: " + arrayQueue.dequeue()); // 1
-        System.out.println("ArrayQueue - الحجم: " + arrayQueue.size()); // 2
+        PositionalLinkedList<String> list = new PositionalLinkedList<>();
 
-        // اختبار Queue باستخدام Linked List
-        Queue<String> linkedQueue = new LinkedQueue<>();
-        linkedQueue.enqueue("أ");
-        linkedQueue.enqueue("ب");
-        linkedQueue.enqueue("ج");
-        System.out.println("LinkedQueue - العنصر الموجود في المقدمة: " + linkedQueue.first()); // أ
-        System.out.println("LinkedQueue - العنصر الذي تمت إزالته: " + linkedQueue.dequeue()); // أ
-        System.out.println("LinkedQueue - الحجم: " + linkedQueue.size()); // 2
+        // Add elements
+        Position<String> p1 = list.addFirst("A");
+        Position<String> p2 = list.addLast("C");
+        Position<String> p3 = list.addBefore(p2, "B");
+
+        // Iterate over elements
+        System.out.println("Elements:");
+        for (String element : list) {
+            System.out.println(element);
+        }
+
+        // Remove an element
+        list.remove(p3);
+
+        // Iterate over positions
+        System.out.println("Positions:");
+        for (Position<String> p : list.positions()) {
+            System.out.println(p.getElement());
+        }
     }
 }
