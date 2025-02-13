@@ -1,21 +1,21 @@
 public class test {
     public static void main(String[] args) {
-        // اختبار Stack باستخدام Array
-        Stack<Integer> arrayStack = new ArrayStack<>();
-        arrayStack.push(1);
-        arrayStack.push(2);
-        arrayStack.push(3);
-        System.out.println("ArrayStack - Top: " + arrayStack.top()); // 3
-        System.out.println("ArrayStack - Pop: " + arrayStack.pop()); // 3
-        System.out.println("ArrayStack - Size: " + arrayStack.size()); // 2
+        // اختبار Queue باستخدام Array
+        Queue<Integer> arrayQueue = new ArrayQueue1<>();
+        arrayQueue.enqueue(1);
+        arrayQueue.enqueue(2);
+        arrayQueue.enqueue(3);
+        System.out.println("ArrayQueue - العنصر الموجود في المقدمة: " + arrayQueue.first()); // 1
+        System.out.println("ArrayQueue - العنصر الذي تمت إزالته: " + arrayQueue.dequeue()); // 1
+        System.out.println("ArrayQueue - الحجم: " + arrayQueue.size()); // 2
 
-        // اختبار Stack باستخدام Linked List
-        Stack<String> linkedStack = new LinkedStack<>();
-        linkedStack.push("أ");
-        linkedStack.push("ب");
-        linkedStack.push("ج");
-        System.out.println("LinkedStack - Top: " + linkedStack.top()); // ج
-        System.out.println("LinkedStack - Pop: " + linkedStack.pop()); // ج
-        System.out.println("LinkedStack - Size: " + linkedStack.size()); // 2
+        // اختبار Queue باستخدام Linked List
+        Queue<String> linkedQueue = new LinkedQueue<>();
+        linkedQueue.enqueue("أ");
+        linkedQueue.enqueue("ب");
+        linkedQueue.enqueue("ج");
+        System.out.println("LinkedQueue - العنصر الموجود في المقدمة: " + linkedQueue.first()); // أ
+        System.out.println("LinkedQueue - العنصر الذي تمت إزالته: " + linkedQueue.dequeue()); // أ
+        System.out.println("LinkedQueue - الحجم: " + linkedQueue.size()); // 2
     }
 }
